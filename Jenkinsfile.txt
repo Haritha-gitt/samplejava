@@ -1,5 +1,5 @@
 pipeline {
-//made some changes
+//made some change
     agent any
     stages{
         stage('Checkout'){
