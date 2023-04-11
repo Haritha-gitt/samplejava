@@ -15,7 +15,7 @@ pipeline {
         stage('Test'){
             steps {
                 // Run tests using a testing framework (e.g., JUnit)
-                sh 'java org.junit.runner.JUnitCore HelloWorldTest'
+                bat 'start/b java org.junit.runner.JUnitCore HelloWorldTest'
             }
         }
     }
