@@ -12,5 +12,11 @@ pipeline {
                 bat 'start /b javac HelloWorld.java'
             }
         }
+        stage('Test'){
+            steps {
+                // Run tests using a testing framework (e.g., JUnit)
+                sh 'java org.junit.runner.JUnitCore HelloWorldTest'
+            }
+        }
     }
 }
