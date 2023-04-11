@@ -18,5 +18,10 @@ pipeline {
                 bat 'start/b java org.junit.runner.JUnitCore HelloWorldTest'
             }
         }
+        stage('Dockerize') {
+            steps {
+                bat 'start/d docker build -t newimage .'
+            }
+        } 
     }
 }
