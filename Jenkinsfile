@@ -26,7 +26,7 @@ pipeline {
         stage('push image to dockerhub'){
             steps{
                      withCredentials([string(credentialsId: 'dockerid', variable: 'dockervar')]) {
-                         bat 'start /b docker login -u harithabondalapati -p '${dockervar}
+                         bat 'start /b docker login -u harithabondalapati -p '${dockervar}'
 }
                 bat 'start /b docker push harithabondalapati/newimage'
             }
