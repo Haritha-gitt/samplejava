@@ -20,16 +20,15 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                bat 'start /b docker build -t newimage .'
+                bat 'start /b docker build -t Haritha-gitt/newimage .'
             }
         }
-        stage('push image to dockerhub'){
+        /*stage('push image to dockerhub'){
             steps{
-                      withCredentials([string(credentialsId: 'dockerhubid', variable: 'dockerhubvar')]) {
-                          bat 'start /b docker login -u ${dockerhubcred} -p ${Hari@2306}'
-                          bat 'start /b docker push dockerhubcred/newimage'
-                      }
+                     withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'dockerhubcred', passwordVariable: 'DOCKER_PASSWORD')]) {
+          sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+          sh 'docker push your-docker-image'
             }
-        }
+        }*/
     }
 }
