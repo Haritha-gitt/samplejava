@@ -20,13 +20,15 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                bat 'start /b docker build -t harithabondalapati/newimage .'
+                bat 'start /b docker build -t newimage .'
             }
         }
         stage('push image to dockerhub'){
             steps{
-                       bat "start /b docker login -u '${harithabondalapati}' -p '${Hari@2306}'"
-                       bat 'start /b docker push harithabondalapati/newimage/dockerimage'
+                      withCredentials([string(credentialsId: 'dockerhubid', variable: 'dockerhubvar')]) {
+                          bat 'start /b docker login -u ${dockerhubcred} -p ${Hari@2306}'
+                          bat 'start /b docker push dockerhubcred/newimage'
+                      }
             }
         }
     }
