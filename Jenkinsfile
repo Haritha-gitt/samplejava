@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                    bat 'start /bjavac HelloWorld.java'
+                    bat 'start /b javac HelloWorld.java'
             }
         }
         stage('Test'){
