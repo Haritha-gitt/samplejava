@@ -12,16 +12,16 @@ pipeline {
                 bat 'start /B javac HelloWorld.java'
             }
         }
-        /*stage('Test'){
+        stage('Test'){
             steps {
                 // Run tests using a testing framework (e.g., JUnit)
-                bat 'start/b java org.junit.runner.JUnitCore HelloWorldTest'
+                bat 'start /b java org.junit.runner.JUnitCore HelloWorldTest'
             }
         }
         stage('Dockerize') {
             steps {
-                bat 'start/d docker build -t newimage .'
+                bat 'start /b docker build -t newimage .'
             }
-        }*/ 
+        } 
     }
 }
